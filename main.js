@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-	// Проверка наличия User-Agent
-	if (navigator.userAgent) {
-		// Перенаправление на основную страницу
-		window.location.href = 'realindex.html';
-	} else {
-		// Оставить на текущей странице (пустой)
-	}
+	fetch('realindex.html')
+		.then((response) => response.text())
+		.then((html) => {
+			document.querySelector('body').innerHTML = html;
+		})
+		.catch((error) => console.error('Error fetching content:', error));
 });

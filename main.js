@@ -1,8 +1,9 @@
-window.addEventListener('load', function () {
-	// Проверяем, есть ли User-Agent
-	if (!navigator.userAgent) {
-		// Если User-Agent отсутствует, можно выполнить нужные действия
-		alert('Ваш браузер не отправляет User-Agent. Пожалуйста, включите его для доступа к сайту.');
-		// Можно также перенаправить пользователя на другую страницу или выполнить другие действия
+document.addEventListener('DOMContentLoaded', function () {
+	// Проверка наличия User-Agent
+	if (navigator.userAgent) {
+		// Перенаправление на основную страницу
+		window.location.href = 'realindex.html';
+	} else {
+		// Оставить на текущей странице (пустой)
 	}
 });
